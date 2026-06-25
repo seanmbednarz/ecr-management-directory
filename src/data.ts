@@ -116,7 +116,7 @@ export const PEOPLE: Person[] = [
     photo: '/Michael_Wohl_-_Square.jpg', bio: BIO('michael-wohl'), color: '#f15825' },
   { id: 'jennifer-umana', name: 'Jennifer Umana', cred: '', title: 'Assistant Property Manager', dept: 'management', parent: 'michelle-ackermann',
     email: 'jumana@ecrtx.com', phone: '512-505-0832', mobile: '580-480-5008', linkedin: LI('jennifer-u-1133862a'),
-    photo: '/Jennifer_Umana_-_Square%20copy.jpg', bio: BIO('jennifer-umana'), color: '#f15825' },
+    photo: '/Jennifer_Umana_-_Square.jpg', bio: BIO('jennifer-umana'), color: '#f15825' },
 
   { id: 'graham-shearer', name: 'Graham Shearer', cred: '', title: 'Property Assistant', dept: 'management', parent: 'angela-odom-brown',
     email: 'gshearer@ecrtx.com', phone: '512-505-0495', mobile: '512-289-5029', linkedin: LI('graham-shearer-9a6a68290'),
@@ -124,7 +124,7 @@ export const PEOPLE: Person[] = [
 
   { id: 'taylor-fisher', name: 'Taylor Fisher', cred: '', title: 'Assistant Property Manager', dept: 'management', parent: 'madeline-powers',
     email: 'tfisher@ecrtx.com', phone: '512-505-0836', mobile: '512-803-4214', linkedin: LI('taylorcfisher'),
-    photo: '/Taylor_Fisher_-_Square%20copy.jpg', bio: BIO('taylor-fisher'), color: '#879792' },
+    photo: '/Taylor_Fisher_-_Square.jpg', bio: BIO('taylor-fisher'), color: '#879792' },
   { id: 'luis-elizondo', name: 'Luis Elizondo', cred: '', title: 'Property Assistant', dept: 'management', parent: 'madeline-powers',
     email: 'lelizondo@ecrtx.com', phone: '512-505-0498', mobile: '956-346-6209', linkedin: LI('luis-marcelo-elizondo'),
     photo: '/Luis_Elizondo_-_Square.jpg', bio: BIO('luis-elizondo'), color: '#879792' },

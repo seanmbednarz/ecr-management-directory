@@ -248,6 +248,16 @@ button { font-family: inherit; cursor: pointer; border: none; background: none; 
   overflow: auto;
   padding: 36px 24px 80px;
   min-height: 60vh;
+  cursor: grab;
+}
+
+.chart-wrap.dragging {
+  cursor: grabbing;
+  user-select: none;
+}
+
+.chart-wrap.dragging .org-card {
+  cursor: grabbing;
 }
 
 .chart-scroll-inner {

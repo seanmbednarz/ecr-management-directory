@@ -132,6 +132,10 @@ interface OrgChartProps {
 export default function OrgChart({ query, onSelect, expandTrigger, collapseTrigger }: OrgChartProps) {
   const isFiltered = !!query;
   const wrapRef = useRef<HTMLDivElement>(null);
+  const [dragging, setDragging] = useState(false);
+
+  // Click-and-drag panning (mouse only; touch keeps native scrolling).
+  const drag = useRef({ active: false, startX: 0, startY: 0, left: 0, top: 0, vWindow: false, moved: false });
 
   useEffect(() => {
     const el = wrapRef.current;
@@ -139,12 +143,72 @@ export default function OrgChart({ query, onSelect, expandTrigger, collapseTrigg
     el.scrollLeft = (el.scrollWidth - el.clientWidth) / 2;
   }, []);
 
+  const onMouseDown = (e: React.MouseEvent) => {
+    if (e.button !== 0) return;
+    const el = wrapRef.current;
+    if (!el) return;
+    // The wrap scrolls horizontally; vertical overflow usually scrolls the
+    // window. Pan whichever is actually the vertical scroller.
+    const vWindow = el.scrollHeight <= el.clientHeight;
+    drag.current = {
+      active: true,
+      startX: e.clientX,
+      startY: e.clientY,
+      left: el.scrollLeft,
+      top: vWindow ? window.scrollY : el.scrollTop,
+      vWindow,
+      moved: false,
+    };
+    setDragging(true);
+  };
+
+  const onMouseMove = (e: React.MouseEvent) => {
+    const d = drag.current;
+    const el = wrapRef.current;
+    if (!d.active || !el) return;
+    const dx = e.clientX - d.startX;
+    const dy = e.clientY - d.startY;
+    if (!d.moved && Math.abs(dx) + Math.abs(dy) > 5) d.moved = true;
+    if (d.moved) {
+      e.preventDefault();
+      el.scrollLeft = d.left - dx;
+      if (d.vWindow) {
+        window.scrollTo(window.scrollX, d.top - dy);
+      } else {
+        el.scrollTop = d.top - dy;
+      }
+    }
+  };
+
+  const endDrag = () => {
+    if (!drag.current.active) return;
+    drag.current.active = false;
+    setDragging(false);
+  };
+
+  // Swallow the click that follows a drag so it doesn't open a person card.
+  const onClickCapture = (e: React.MouseEvent) => {
+    if (drag.current.moved) {
+      e.preventDefault();
+      e.stopPropagation();
+      drag.current.moved = false;
+    }
+  };
+
   function matchesPerson(p: Person): boolean {
     return !query || (p.name + ' ' + p.title + ' ' + (p.cred || '')).toLowerCase().includes(query);
   }
 
   return (
-    <div className="chart-wrap" ref={wrapRef}>
+    <div
+      className={`chart-wrap${dragging ? ' dragging' : ''}`}
+      ref={wrapRef}
+      onMouseDown={onMouseDown}
+      onMouseMove={onMouseMove}
+      onMouseUp={endDrag}
+      onMouseLeave={endDrag}
+      onClickCapture={onClickCapture}
+    >
       <div className="chart-scroll-inner">
         <ul className="org-tree">
           {roots.map(r => (
