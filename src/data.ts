@@ -95,7 +95,7 @@ export const PEOPLE: Person[] = [
   { id: 'alli-rockett', name: 'Alli Rockett', cred: '', title: 'Property Manager', dept: 'management', parent: 'franziska-jackson',
     email: 'arockett@ecrtx.com', phone: '512-505-0020', mobile: '254-749-7204', linkedin: '',
     photo: '/Alli_Rockett_-_Square.jpg', bio: BIO('alli-rockett'), color: '#f15825' },
-  { id: 'jack-carroll', name: 'Jack Carroll', cred: '', title: 'Property Manager', dept: 'management', parent: 'franziska-jackson',
+  { id: 'jack-carroll', name: 'Jack Carroll', cred: '', title: 'Property Manager', dept: 'management', parent: 'madeline-powers',
     email: 'jcarroll@ecrtx.com', phone: '512-505-0947', mobile: '512-284-4883', linkedin: LI('jack-carroll-548834148'),
     photo: '/Jack_Carroll_-_Square.jpg', bio: BIO('jack-carroll'), color: '#6a0e2e' },
   { id: 'stephanie-trevino', name: 'Stephanie Trevino', cred: 'MBA', title: 'Accounting Manager', dept: 'management', parent: 'franziska-jackson',
