@@ -26,7 +26,7 @@ const LI  = (s: string) => `https://www.linkedin.com/in/${s}`;
 
 export const PEOPLE: Person[] = [
   // --- Top of org ---
-  { id: 'matt-levin', name: 'Matt Levin', cred: 'SIOR', title: 'Founder / Managing Partner', dept: 'management', parent: null,
+  { id: 'matt-levin', name: 'Matt Levin', cred: 'SIOR', title: 'Founder / CEO', dept: 'management', parent: null,
     email: 'mlevin@ecrtx.com', phone: '512-505-0001', mobile: '512-733-4409', linkedin: LI('matt-levin-b7170613'),
     photo: '/Matt_Levin_-_Square.jpg', bio: BIO('matt-levin'), color: '#db2328' },
 
