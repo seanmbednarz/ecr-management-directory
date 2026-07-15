@@ -1,5 +1,5 @@
 import { useState, useEffect, useRef, useCallback } from 'react';
-import { Search } from 'lucide-react';
+import { Search, Download } from 'lucide-react';
 import { PEOPLE, byId } from './data';
 import OrgChart from './OrgChart';
 import Directory from './Directory';
@@ -37,6 +37,23 @@ export default function App() {
 
   const handleSelect = useCallback((id: string) => {
     setSelectedId(id);
+  }, []);
+
+  const generatedOn = new Date().toLocaleDateString('en-US', {
+    year: 'numeric', month: 'short', day: 'numeric',
+  });
+
+  // Save/print the chart as a single landscape PDF page. Scales the currently
+  // expanded tree to fit the printable page width, then opens the print dialog
+  // (which offers "Save as PDF"). Collapse branches first for a cleaner sheet.
+  const handleExportPdf = useCallback(() => {
+    const tree = document.querySelector('.org-tree') as HTMLElement | null;
+    if (tree) {
+      const PRINTABLE_W = 950; // US Letter landscape printable width @96dpi
+      const zoom = Math.min(1, PRINTABLE_W / tree.scrollWidth);
+      document.documentElement.style.setProperty('--print-zoom', String(zoom));
+    }
+    window.print();
   }, []);
 
   return (
@@ -97,6 +114,13 @@ export default function App() {
                 <button className="tool-btn" onClick={() => setCollapseTrigger(t => t + 1)}>
                   Collapse all
                 </button>
+                <button
+                  className="tool-btn print-btn"
+                  onClick={handleExportPdf}
+                  title="Save or print the org chart as a PDF"
+                >
+                  <Download size={13} /> Save as PDF
+                </button>
               </>
             )}
 
@@ -111,12 +135,30 @@ export default function App() {
       {/* ===== MAIN CONTENT ===== */}
       <main>
         {effectiveView === 'chart' && (
-          <OrgChart
-            query={query}
-            onSelect={handleSelect}
-            expandTrigger={expandTrigger}
-            collapseTrigger={collapseTrigger}
-          />
+          <>
+            <div className="print-only print-header">
+              <div className="print-brand">
+                <img src="/ECR_Logo.svg" alt="ECR" className="print-logo" />
+                <div>
+                  <div className="print-title">Management Org Chart</div>
+                  <div className="print-sub">Equitable Commercial Realty &middot; Austin, TX</div>
+                </div>
+              </div>
+              <div className="print-meta">
+                {PEOPLE.length} people<br />Generated {generatedOn}
+              </div>
+            </div>
+            <OrgChart
+              query={query}
+              onSelect={handleSelect}
+              expandTrigger={expandTrigger}
+              collapseTrigger={collapseTrigger}
+            />
+            <div className="print-only print-footer">
+              <span>management.ecrtx.io</span>
+              <span>Equitable Commercial Realty</span>
+            </div>
+          </>
         )}
         {effectiveView === 'directory' && (
           <div className="dir-wrap">

@@ -508,3 +508,71 @@ button { font-family: inherit; cursor: pointer; border: none; background: none; 
 @media (prefers-reduced-motion: reduce) {
   * { transition: none !important; }
 }
+
+/* ============================================================
+   Print / Save as PDF  — landscape org-chart poster
+   ============================================================ */
+.print-only { display: none; }
+
+.print-btn { display: inline-flex; align-items: center; gap: 6px; }
+
+@media print {
+  @page { size: landscape; margin: 12mm; }
+
+  /* Force browsers to print brand colors, dept borders and avatar tints */
+  * { -webkit-print-color-adjust: exact !important; print-color-adjust: exact !important; }
+
+  /* Hide interactive chrome */
+  .app-header,
+  .no-print { display: none !important; }
+
+  body { background: #fff; }
+  .app-root { min-height: 0; }
+
+  /* Reveal print-only header / footer */
+  .print-only { display: block; }
+
+  .print-header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    border-bottom: 2px solid var(--ecr-red);
+    padding: 0 4px 8px;
+    margin: 0 0 6px;
+  }
+  .print-brand { display: flex; align-items: center; gap: 10px; }
+  .print-logo { height: 28px; width: auto; }
+  .print-title {
+    font-size: 14px; font-weight: 700; letter-spacing: .05em;
+    text-transform: uppercase; color: var(--ecr-charcoal); line-height: 1.1;
+  }
+  .print-sub {
+    font-size: 9.5px; font-weight: 600; letter-spacing: .07em;
+    text-transform: uppercase; color: var(--ink-soft); margin-top: 2px;
+  }
+  .print-meta { font-size: 9.5px; color: var(--ink-soft); text-align: right; line-height: 1.5; }
+
+  .print-footer {
+    display: flex; justify-content: space-between;
+    border-top: 1px solid var(--line);
+    padding: 6px 4px 0; margin: 8px 0 0;
+    font-size: 9px; color: var(--ink-soft);
+  }
+
+  /* Unlock the pan/scroll canvas so the whole tree flows onto the page */
+  main { overflow: visible !important; }
+  .chart-wrap {
+    overflow: visible !important;
+    height: auto !important;
+    min-height: 0 !important;
+    padding: 6px 0 0 !important;
+    cursor: default !important;
+  }
+  .chart-scroll-inner { min-width: 0 !important; }
+
+  /* Fit-to-width: JS sets --print-zoom just before printing */
+  .org-tree { zoom: var(--print-zoom, 1); }
+
+  .org-card { box-shadow: none !important; transform: none !important; break-inside: avoid; }
+  .org-twist { display: none !important; }
+}
