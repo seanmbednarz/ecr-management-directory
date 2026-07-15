@@ -115,7 +115,7 @@ export const PEOPLE: Person[] = [
     email: 'jumana@ecrtx.com', phone: '512-505-0832', mobile: '580-480-5008', linkedin: LI('jennifer-u-1133862a'),
     photo: '/Jennifer_Umana_-_Square.jpg', bio: BIO('jennifer-umana'), color: '#f15825' },
 
-  { id: 'graham-shearer', name: 'Graham Shearer', cred: '', title: 'Property Assistant', dept: 'management', parent: 'angela-odom-brown',
+  { id: 'graham-shearer', name: 'Graham Shearer', cred: '', title: 'Assistant Property Manager', dept: 'management', parent: 'angela-odom-brown',
     email: 'gshearer@ecrtx.com', phone: '512-505-0495', mobile: '512-289-5029', linkedin: LI('graham-shearer-9a6a68290'),
     photo: '/Graham_Shearer_-_Square.jpg', bio: BIO('graham-shearer'), color: '#6a0e2e' },
 
