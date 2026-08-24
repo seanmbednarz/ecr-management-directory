@@ -119,7 +119,7 @@ export const PEOPLE: Person[] = [
     email: 'gshearer@ecrtx.com', phone: '512-505-0495', mobile: '512-289-5029', linkedin: LI('graham-shearer-9a6a68290'),
     photo: '/Graham_Shearer_-_Square.jpg', bio: BIO('graham-shearer'), color: '#6a0e2e' },
 
-  { id: 'taylor-fisher', name: 'Taylor Fisher', cred: '', title: 'Property Accountant', dept: 'management', parent: 'chris-standard',
+  { id: 'taylor-fisher', name: 'Taylor Fisher', cred: '', title: 'Property Manager', dept: 'management', parent: 'chris-standard',
     email: 'tfisher@ecrtx.com', phone: '512-505-0836', mobile: '512-803-4214', linkedin: LI('taylorcfisher'),
     photo: '/Taylor_Fisher_-_Square.jpg', bio: BIO('taylor-fisher'), color: '#879792' },
   { id: 'luis-elizondo', name: 'Luis Elizondo', cred: '', title: 'Property Assistant', dept: 'management', parent: 'chris-standard',
