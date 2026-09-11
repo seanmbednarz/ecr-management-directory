@@ -35,6 +35,10 @@ export const PEOPLE: Person[] = [
     email: 'fjackson@ecrtx.com', phone: '512-505-0013', mobile: '512-694-3093', linkedin: LI('franziska-jackson-cpm-rpa-fma-leed-ap-34072527'),
     photo: '/Franziska_Jackson_-_Square.jpg', bio: BIO('franziska-jackson'), color: '#db2328' },
 
+  { id: 'alli-rockett', name: 'Alli Rockett', cred: '', title: 'Property Manager', dept: 'management', parent: 'matt-levin',
+    email: 'arockett@ecrtx.com', phone: '512-505-0020', mobile: '254-749-7204', linkedin: '',
+    photo: '/Alli_Rockett_-_Square.jpg', bio: BIO('alli-rockett'), color: '#f15825' },
+
   // --- Construction Management (under Matt Levin) ---
   { id: 'aaron-clemons', name: 'Aaron Clemons', cred: '', title: 'Director of Construction Management', dept: 'construction', parent: 'matt-levin',
     email: 'aclemons@ecrtx.com', phone: '512-505-0831', mobile: '', linkedin: LI('aaron-clemons-310366117'),
@@ -54,7 +58,7 @@ export const PEOPLE: Person[] = [
     photo: '/Lee_Jordan_-_Square.jpg', bio: BIO('lee-jordan'), color: '#879792' },
   { id: 'bradley-augustin', name: 'Bradley Augustin', cred: '', title: 'Maintenance Engineer', dept: 'management', parent: 'mike-bartz',
     email: 'baugustin@ecrtx.com', phone: '512-505-2754', mobile: '786-230-4297', linkedin: LI('bradley-augustin-b6559ba5'),
-    photo: '', bio: BIO('bradley-augustin'), color: '#879792' },
+    photo: '/Bradley_Augustin_-_Square.jpg', bio: BIO('bradley-augustin'), color: '#879792' },
   { id: 'daniel-segura', name: 'Daniel Segura', cred: '', title: 'Building Engineer', dept: 'management', parent: 'mike-bartz',
     email: 'dsegura@ecrtx.com', phone: '512-505-9042', mobile: '512-815-6070', linkedin: '',
     photo: '/Daniel_Segura_-_Square.jpg', bio: BIO('daniel-segura'), color: '#879792' },
@@ -98,9 +102,6 @@ export const PEOPLE: Person[] = [
   { id: 'chris-standard', name: 'Chris Standard', cred: '', title: 'Property Manager', dept: 'management', parent: 'franziska-jackson',
     email: 'cstandard@ecrtx.com', phone: '512-505-0023', mobile: '512-779-3235', linkedin: LI('chris-standard-891402125'),
     photo: '/Chris_Standard_-_Square.jpg', bio: BIO('chris-standard'), color: '#879792' },
-  { id: 'alli-rockett', name: 'Alli Rockett', cred: '', title: 'Property Manager', dept: 'management', parent: 'franziska-jackson',
-    email: 'arockett@ecrtx.com', phone: '512-505-0020', mobile: '254-749-7204', linkedin: '',
-    photo: '/Alli_Rockett_-_Square.jpg', bio: BIO('alli-rockett'), color: '#f15825' },
   { id: 'jack-carroll', name: 'Jack Carroll', cred: '', title: 'Property Manager', dept: 'management', parent: 'chris-standard',
     email: 'jcarroll@ecrtx.com', phone: '512-505-0947', mobile: '512-284-4883', linkedin: LI('jack-carroll-548834148'),
     photo: '/Jack_Carroll_-_Square.jpg', bio: BIO('jack-carroll'), color: '#6a0e2e' },
