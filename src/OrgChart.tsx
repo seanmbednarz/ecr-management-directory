@@ -68,7 +68,7 @@ function OrgNode({ person, isFiltered, matchesPerson, onSelect, forceExpand, for
   const showChildren = children.length > 0 && !collapsed;
 
   return (
-    <li className={`org-li${isRoot ? ' org-li-root' : ''}`}>
+    <li className={`org-li${isRoot ? ' org-li-root' : ''}`} data-id={person.id}>
       <div
         className="org-card"
         tabIndex={0}

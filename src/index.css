@@ -336,6 +336,10 @@ button { font-family: inherit; cursor: pointer; border: none; background: none; 
   border-radius: 8px 0 0 0;
 }
 
+/* Extra breathing room between Alli Rockett and Aaron Clemons (Construction) */
+.org-li[data-id="alli-rockett"] { padding-right: 34px; }
+.org-li[data-id="aaron-clemons"] { padding-left: 34px; }
+
 /* Root nodes: no top connectors */
 .org-tree > .org-li,
 .org-li-root {
