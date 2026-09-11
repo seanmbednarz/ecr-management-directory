@@ -56,7 +56,7 @@ export const PEOPLE: Person[] = [
   { id: 'lee-jordan', name: 'Lee Jordan', cred: '', title: 'Building Engineer', dept: 'management', parent: 'mike-bartz',
     email: 'ljordan@ecrtx.com', phone: '512-505-2758', mobile: '850-426-8497', linkedin: '',
     photo: '/Lee_Jordan_-_Square.jpg', bio: BIO('lee-jordan'), color: '#879792' },
-  { id: 'bradley-augustin', name: 'Bradley Augustin', cred: '', title: 'Maintenance Engineer', dept: 'management', parent: 'mike-bartz',
+  { id: 'bradley-augustin', name: 'Bradley Augustin', cred: '', title: 'Maintenance Technician', dept: 'management', parent: 'mike-bartz',
     email: 'baugustin@ecrtx.com', phone: '512-505-2754', mobile: '786-230-4297', linkedin: LI('bradley-augustin-b6559ba5'),
     photo: '/Bradley_Augustin_-_Square.jpg', bio: BIO('bradley-augustin'), color: '#879792' },
   { id: 'daniel-segura', name: 'Daniel Segura', cred: '', title: 'Building Engineer', dept: 'management', parent: 'mike-bartz',
