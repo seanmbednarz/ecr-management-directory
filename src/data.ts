@@ -118,7 +118,7 @@ export const PEOPLE: Person[] = [
   { id: 'wendy-smith', name: 'Wendy Smith', cred: '', title: 'Assistant Property Manager', dept: 'management', parent: 'michelle-ackermann',
     email: 'wsmith@ecrtx.com', phone: '512-505-0012', mobile: '512-635-6618', linkedin: '',
     photo: '/Wendy_Smith_-_Square.jpg', bio: BIO('wendy-smith'), color: '#f15825' },
-  { id: 'jennifer-umana', name: 'Jennifer Umana', cred: '', title: 'Assistant Property Manager', dept: 'management', parent: 'michelle-ackermann',
+  { id: 'jennifer-umana', name: 'Jennifer Umana', cred: '', title: 'Assistant Property Manager', dept: 'management', parent: 'jamie-mcewin',
     email: 'jumana@ecrtx.com', phone: '512-505-0832', mobile: '580-480-5008', linkedin: LI('jennifer-u-1133862a'),
     photo: '/Jennifer_Umana_-_Square.jpg', bio: BIO('jennifer-umana'), color: '#f15825' },
 
