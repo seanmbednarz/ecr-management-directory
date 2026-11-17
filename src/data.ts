@@ -136,9 +136,6 @@ export const PEOPLE: Person[] = [
     email: 'cpagan@ecrtx.com', phone: '512-505-2768', mobile: '512-947-8014', linkedin: '',
     photo: '/Chris_Pagan_-_Square.jpg', bio: BIO('chris-pagan'), color: '#879792' },
   // Franziska Jackson, roving engineering team
-  { id: 'lee-jordan', name: 'Lee Jordan', cred: '', title: 'Building Engineer', dept: 'management', parent: 'franziska-jackson',
-    email: 'ljordan@ecrtx.com', phone: '512-505-2758', mobile: '850-426-8497', linkedin: '',
-    photo: '/Lee_Jordan_-_Square.jpg', bio: BIO('lee-jordan'), color: '#879792' },
   { id: 'brandon-meadows', name: 'Brandon Meadows', cred: '', title: 'Building Engineer', dept: 'management', parent: 'franziska-jackson',
     email: 'bmeadows@ecrtx.com', phone: '512-505-0943', mobile: '850-380-6299', linkedin: '',
     photo: '/Brandon_Meadows_-_Square.jpg', bio: BIO('brandon-meadows'), color: '#879792' },
